@@ -31,9 +31,9 @@ export class CommentsService {
       }
       this.updateLastCommentId();
 
-      const commentsParents = comments.filter(comment => !comment.parentCommentId);
+      const commentsParents = comments.filter(comment => !comment.parentCommentId).sort(this.sortByDate);
       commentsParents.forEach(parent => {
-        parent.children = comments.filter(comment => comment.parentCommentId === parent.id)
+        parent.children = comments.filter(comment => comment.parentCommentId === parent.id).sort(this.sortByDate)
         if (!parent.children) {
           parent.children = [];
         }
@@ -50,6 +50,10 @@ export class CommentsService {
 
       return comments
     }
+  }
+
+  sortByDate(comment1: Comment, comment2: Comment): number {
+    return new Date(comment1.createdAt).valueOf() - new Date(comment2.createdAt).valueOf()
   }
 
   updateLastCommentId(): void {

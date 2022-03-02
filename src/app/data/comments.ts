@@ -110,7 +110,7 @@ export var allComments: Comment[] = [
     "parentCommentId": null,
     "ownerId": 4,
     "txt": "Release the Hounds!",
-    "createdAt": "2018-11-01T10:00:00.000Z",
+    "createdAt": "2020-11-01T10:00:00.000Z",
     "deletedAt": null
   },
   {
