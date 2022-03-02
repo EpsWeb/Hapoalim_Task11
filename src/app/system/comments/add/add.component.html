@@ -1,0 +1,19 @@
+<div class="add container">
+  <div class="row">
+    <div class="col-md-1 col-12 add__avatar">
+      <img [src]="user?.id ?? 0 | imageSrcById" alt="avatar">
+    </div>
+
+    <div class="col-md-7 col-12 add__textarea">
+      <mat-form-field appearance="outline" color="accent">
+        <textarea placeholder="Please add your comment here..." [formControl]="textControl"
+                  matInput type="text" rows="1">
+        </textarea>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4 col-12 add__button">
+      <button mat-raised-button color="accent" (click)="submit()">SUBMIT</button>
+    </div>
+
+  </div>
+</div>

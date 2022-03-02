@@ -1,0 +1,9 @@
+<app-comment
+  *ngFor="let comment of comments"
+  [comment]="comment"
+  [user]="user"
+></app-comment>
+
+<app-add
+  [user]="user"
+></app-add>

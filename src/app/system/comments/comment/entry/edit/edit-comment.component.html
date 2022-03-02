@@ -1,0 +1,8 @@
+<div class="edit">
+  <mat-form-field appearance="outline">
+    <mat-label>Comment</mat-label>
+    <textarea matInput [formControl]="commentControl" rows="5"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" (click)="edit()">Edit</button>
+</div>

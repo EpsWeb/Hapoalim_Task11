@@ -1,0 +1,43 @@
+<!--Parent comment-->
+<div class="comment container"
+     [ngStyle]="{'cursor': isParent && user?.id !== comment?.ownerId ? 'pointer': 'default'}"
+     [ngClass]="{'comment__child': !isParent}"
+>
+  <div class="row" (click)="react()">
+
+    <div class="col-md-1 col-12 comment__avatar">
+      <img [src]="comment?.ownerId ?? 0 | imageSrcById" alt="avatar">
+    </div>
+
+    <div class="col-md-3 col-12 comment__userData">
+      <span class="comment__userData__name">{{comment?.ownerId ?? 0 | userNameById}}</span>
+      <span class="comment__userData__timeAgo">{{comment?.createdAt | time}}</span>
+    </div>
+
+    <div class="col-md-8 col-12 comment__text">
+      <span>{{comment?.txt}}</span>
+      <span class="comment__text__buttons" *ngIf="user?.id === comment?.ownerId">
+        <button mat-raised-button color="primary"
+                (click)="edit(comment?.id ?? 0, comment?.txt || '', isParent)"
+        >EDIT COMMENT
+        </button>
+        <button mat-raised-button color="primary"
+                (click)="delete(comment?.id ?? 0, isParent)"
+        >DELETE COMMENT
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!--Child comments-->
+<ng-container *ngFor="let child of comment?.children">
+  <app-comment
+    [comment]="child"
+    [user]="user"
+    [isParent]="false"
+  ></app-comment>
+</ng-container>
+
+
+

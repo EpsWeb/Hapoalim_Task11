@@ -1,0 +1,8 @@
+<div class="react">
+  <mat-form-field appearance="outline">
+    <mat-label>Comment</mat-label>
+    <textarea matInput name="mood" [formControl]="commentControl" rows="5"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" (click)="react()">Add comment</button>
+</div>

@@ -1,0 +1,59 @@
+.comment {
+  width: 85%;
+  padding: 5px;
+  border: 1px solid #D1D1D1;
+  border-radius: 3px;
+  background-color: #fff;
+  margin: 10px 20px;
+
+  &__child {
+    margin-left: 50px !important;
+  }
+
+  &__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__userData {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    &__name {
+      color: #602A93;
+
+      @media screen and (max-width: 767px) {
+        text-align: center;
+      }
+    }
+
+    &__timeAgo {
+      @media screen and (max-width: 767px) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__text {
+    align-items: center;
+    display: flex;
+
+    &__buttons {
+      float: right;
+      margin-left: 30px;
+
+      & button {
+        margin: 5px;
+      }
+    }
+  }
+}
