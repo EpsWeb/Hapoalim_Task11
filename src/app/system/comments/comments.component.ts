@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subject, takeUntil} from "rxjs";
 import {CommentsService} from "../../shared/services/comments.service";
 import {UserService} from "../../shared/services/user.service";
 import {Comment, User} from "../../shared/models";
-import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-comments',
